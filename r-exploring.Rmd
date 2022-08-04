@@ -30,8 +30,7 @@ skimr::skim(diamonds)
 
 ```{r}
 ggplot(data = diamonds, aes(x = carat, y = price)) +
-  geom_point(width = 0.2,
-              alpha = 0.5) +
+  geom_point(alpha = 0.5) +
   theme_light() +
   labs(x = "Carat size",
        y = "Price",
@@ -45,5 +44,15 @@ ggplot(data = diamonds, aes(x = carat)) +
   labs(x = "Carat size",
        y = "Count",
        title = "Count distribution of carat size")
+```
+
+```{r}
+ggplot(data = diamonds, aes(x = clarity, y = price)) +
+  geom_jitter(width = 0.2,
+              alpha = 0.5) +
+  theme_light() +
+  labs(x = "Clarity",
+       y = "Price",
+       title = "Price as a function of clarity")
 ```
 
