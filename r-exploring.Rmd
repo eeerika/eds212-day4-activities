@@ -1,0 +1,49 @@
+---
+title: "Day 4 Activities"
+author: "Erika"
+date: "2022-08-04"
+output: html_document
+---
+
+```{r setup, include = FALSE, warning = FALSE, message = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(GGally)
+library(skimr)
+```
+
+```{r}
+names(diamonds)
+
+dim(diamonds)
+
+summary(diamonds)
+
+head(diamonds)
+
+tail(diamonds)
+
+skimr::skim(diamonds)
+
+#ggpairs(diamonds)
+```
+
+```{r}
+ggplot(data = diamonds, aes(x = carat, y = price)) +
+  geom_point(width = 0.2,
+              alpha = 0.5) +
+  theme_light() +
+  labs(x = "Carat size",
+       y = "Price",
+       title = "Price as a function of carat size")
+```
+
+```{r}
+ggplot(data = diamonds, aes(x = carat)) +
+  geom_histogram(color = "grey") +
+  theme_light() +
+  labs(x = "Carat size",
+       y = "Count",
+       title = "Count distribution of carat size")
+```
+
